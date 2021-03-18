@@ -20,4 +20,8 @@ class Apparel
   def suitable?(user_input)
     user_input.between?(@temperature_range[0], @temperature_range[1])
   end
+
+  def to_s
+    "#{@title} (#{@type}) #{@temperature_range[0]} .. +#{@temperature_range[1]} °С"
+  end
 end

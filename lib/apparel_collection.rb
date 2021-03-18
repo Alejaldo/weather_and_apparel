@@ -12,9 +12,23 @@ class ApparelCollection
     self.new(apparels)
   end
 
-  def apparel_types
+  def to_a
+    @apparels
   end
 
-  def same_type_apparel
+  def types
+    to_a.map { |apparel| apparel.type }.uniq
+  end
+
+  def group_by_type(type)
+    to_a.select { |apparel| apparel.type == type }.map do |apparel|
+      apparel
+    end
+  end
+
+  def whole_temp_range
+    to_a.map {|apparel| apparel.temperature_range[1] }.
+    concat(to_a.map {|apparel| apparel.temperature_range[0] }).
+    uniq
   end
 end
