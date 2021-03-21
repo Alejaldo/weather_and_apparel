@@ -1,5 +1,4 @@
 class ApparelCollection
-
   def initialize(apparels = [])
     @apparels = apparels
   end
@@ -17,18 +16,25 @@ class ApparelCollection
   end
 
   def types
-    to_a.map { |apparel| apparel.type }.uniq
+    @apparels.map { |apparel| apparel.type }.uniq
   end
 
   def group_by_type(type)
-    to_a.select { |apparel| apparel.type == type }.map do |apparel|
+    @apparels.select { |apparel| apparel.type == type }.map do |apparel|
       apparel
     end
   end
 
   def whole_temp_range
-    to_a.map {|apparel| apparel.temperature_range[1] }.
-    concat(to_a.map {|apparel| apparel.temperature_range[0] }).
-    uniq
+    all_max_extremums = @apparels.map { |apparel| apparel.temperature_range[1] }.sort
+    all_min_extremums = @apparels.map { |apparel| apparel.temperature_range[0] }.sort
+
+    full_range = (all_max_extremums + all_min_extremums).uniq.sort
+  end
+
+  def choose_suitable(user_input)
+    types.
+    map { |type| self.group_by_type(type) }.
+    map { |apparel_group| apparel_group.select { |apparel| apparel.suitable?(user_input) } }
   end
 end
