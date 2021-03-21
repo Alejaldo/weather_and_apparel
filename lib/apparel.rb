@@ -22,6 +22,6 @@ class Apparel
   end
 
   def to_s
-    "#{@title} (#{@type}) #{@temperature_range[0]} .. +#{@temperature_range[1]} °С"
+    "#{@title} (#{@type}) #{@temperature_range[0]} .. #{@temperature_range[1]} °С"
   end
 end
