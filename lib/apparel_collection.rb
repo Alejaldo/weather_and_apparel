@@ -11,10 +11,6 @@ class ApparelCollection
     self.new(apparels)
   end
 
-  def to_a
-    @apparels
-  end
-
   def types
     @apparels.map { |apparel| apparel.type }.uniq
   end
