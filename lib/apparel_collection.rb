@@ -11,14 +11,6 @@ class ApparelCollection
     self.new(apparels)
   end
 
-  def types
-    @apparels.map { |apparel| apparel.type }.uniq
-  end
-
-  def select_by_type(type)
-    @apparels.select { |apparel| apparel.type == type }
-  end
-
   def whole_temp_range
     all_max_extremums = @apparels.map { |apparel| apparel.temperature_range[1] }.sort
     all_min_extremums = @apparels.map { |apparel| apparel.temperature_range[0] }.sort
@@ -27,8 +19,7 @@ class ApparelCollection
   end
 
   def choose_suitable(user_input)
-    types.
-    map { |type| self.select_by_type(type) }.
-    map { |apparel_group| apparel_group.select { |apparel| apparel.suitable?(user_input) } }
+    @apparels.filter_map { |apparel| apparel if apparel.suitable?(user_input) }.
+    group_by {|apparel| apparel.type }
   end
 end

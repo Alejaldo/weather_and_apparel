@@ -10,7 +10,7 @@ user_input = STDIN.gets.to_i
 if user_input.between?(apparels.whole_temp_range.min, apparels.whole_temp_range.max)
   puts "\nДля #{user_input} °С предлагаем сегодня надеть:\n\n"
 
-  apparels.choose_suitable(user_input).each { |apparels| puts apparels.sample if apparels.size > 0 }
+  apparels.choose_suitable(user_input).each { |type, apparels| puts apparels.sample }
 else
   puts "\nИзвините, но наши технические возможности позволяют пока что давать рекоммендации только для температурного диапазона:"
   puts "#{apparels.whole_temp_range.min} .. +#{apparels.whole_temp_range.max} °С"
