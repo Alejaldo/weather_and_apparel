@@ -15,10 +15,8 @@ class ApparelCollection
     @apparels.map { |apparel| apparel.type }.uniq
   end
 
-  def group_by_type(type)
-    @apparels.select { |apparel| apparel.type == type }.map do |apparel|
-      apparel
-    end
+  def select_by_type(type)
+    @apparels.select { |apparel| apparel.type == type }
   end
 
   def whole_temp_range
@@ -30,7 +28,7 @@ class ApparelCollection
 
   def choose_suitable(user_input)
     types.
-    map { |type| self.group_by_type(type) }.
+    map { |type| self.select_by_type(type) }.
     map { |apparel_group| apparel_group.select { |apparel| apparel.suitable?(user_input) } }
   end
 end
