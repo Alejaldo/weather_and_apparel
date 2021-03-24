@@ -1,14 +1,14 @@
 class ApparelCollection
-  def initialize(apparels = [])
-    @apparels = apparels
-  end
-
   def self.from_dir(dir_path)
     apparels = Dir[dir_path].map do |apparel_file|
       Apparel.from_file(apparel_file)
     end
 
     self.new(apparels)
+  end
+
+  def initialize(apparels = [])
+    @apparels = apparels
   end
 
   def whole_temp_range
@@ -19,7 +19,8 @@ class ApparelCollection
   end
 
   def choose_suitable(user_input)
-    @apparels.filter_map { |apparel| apparel if apparel.suitable?(user_input) }.
-    group_by {|apparel| apparel.type }
+    @apparels.
+      select { |apparel| apparel if apparel.suitable?(user_input) }.
+      group_by { |apparel| apparel.type }
   end
 end
