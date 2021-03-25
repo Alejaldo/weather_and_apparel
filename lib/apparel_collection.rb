@@ -20,7 +20,7 @@ class ApparelCollection
 
   def choose_suitable(user_input)
     @apparels.
-      select { |apparel| apparel if apparel.suitable?(user_input) }.
+      select { |apparel| apparel.suitable?(user_input) }.
       group_by { |apparel| apparel.type }
   end
 end
