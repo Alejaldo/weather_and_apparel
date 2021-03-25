@@ -13,7 +13,7 @@ class Apparel
   
   def initialize(params)
     @title = params[:title] 
-    @type = params[:type] 
+    @type = params[:type].to_sym 
     @temperature_range = params[:temperature_range].gsub(/[^\d,-]/, '').split(',').map { |value| value.to_i }
   end
 
