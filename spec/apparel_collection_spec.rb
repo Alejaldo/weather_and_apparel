@@ -16,7 +16,7 @@ describe ApparelCollection do
     it 'for 19 C degree should be suitable 2 apparels' do
       user_input = 19
       expect(
-        @apparels.choose_suitable(user_input)[:Обувь].map { |value| value.to_s }
+        @apparels.choose_suitable(user_input)["Обувь"].map { |value| value.to_s }
       ).to match_array(['Кеды (Обувь) 15 .. 35 °С', 'Полуботинки из кожи c тонким текстильным подкладом (Обувь) 5 .. 20 °С'])
     end
 

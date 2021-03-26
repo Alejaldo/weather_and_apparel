@@ -8,14 +8,14 @@ describe Apparel do
 
   it 'initialize class object' do
     expect(@apparel.title).to eq 'Кеды'
-    expect(@apparel.type).to eq :Обувь
+    expect(@apparel.type).to eq 'Обувь'
     expect(@apparel.temperature_range).to eq [15, 35]
   end
 
   describe '#self.from_file' do
     it 'correct reading parameters from file' do 
       expect(@apparel_from_file.title).to eq 'Кеды'
-      expect(@apparel_from_file.type).to eq :Обувь
+      expect(@apparel_from_file.type).to eq 'Обувь'
       expect(@apparel_from_file.temperature_range).to eq [15, 35]
     end
   end
