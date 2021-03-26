@@ -15,7 +15,9 @@ class ApparelCollection
     all_max_extremums = @apparels.map { |apparel| apparel.temperature_range[1] }.sort
     all_min_extremums = @apparels.map { |apparel| apparel.temperature_range[0] }.sort
 
-    full_range = (all_max_extremums + all_min_extremums).uniq.sort
+    full_descret_range = (all_max_extremums + all_min_extremums).uniq.sort
+
+    full_interval_range = [full_descret_range.min, full_descret_range.max]
   end
 
   def choose_suitable(user_input)
