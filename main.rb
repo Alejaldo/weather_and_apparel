@@ -15,6 +15,7 @@ if user_temp.between?(apparels.whole_temp_range.min, apparels.whole_temp_range.m
 
   apparels.choose_suitable(user_temp).each { |type, apparels| puts apparels.sample }
 else
-  puts "\nИзвините, но наши технические возможности позволяют пока что давать рекомендации только для температурного диапазона (Sorry, but our technical capabilities allow us to give recommendations only for this temperature range):"
+  puts "\nИзвините, но наши технические возможности позволяют пока что давать рекомендации только для " \
+    "температурного диапазона (Sorry, but our technical capabilities allow us to give recommendations only for this temperature range):"
   puts "#{apparels.whole_temp_range[0]} .. +#{apparels.whole_temp_range[1]} °С"
 end
