@@ -20,6 +20,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    ast (2.4.2)
     builder (3.2.4)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
@@ -45,6 +46,9 @@ GEM
     multi_xml (0.6.0)
     nokogiri (1.11.7-x86_64-linux)
       racc (~> 1.4)
+    parallel (1.20.1)
+    parser (3.0.2.0)
+      ast (~> 2.4.1)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -60,10 +64,26 @@ GEM
       method_source
       rake (>= 0.13)
       thor (~> 1.0)
+    rainbow (3.0.0)
     rake (13.0.6)
+    regexp_parser (2.1.1)
+    rexml (3.2.5)
+    rubocop (1.18.4)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.8.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.8.0)
+      parser (>= 3.0.1.1)
+    ruby-progressbar (1.11.0)
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.0.0)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -73,6 +93,7 @@ DEPENDENCIES
   dotenv-rails
   geocoder
   httparty
+  rubocop
 
 BUNDLED WITH
    2.2.24

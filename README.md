@@ -1,6 +1,6 @@
 # Что надеть на улицу сегодня? / What wear choose for outdoor?
 
-#### язык: рус / language: ru
+#### язык: рус. и англ. / language: ru and en
 
 ## Особенности
 + 
