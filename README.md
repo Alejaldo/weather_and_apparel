@@ -1,12 +1,16 @@
-# Что надеть на улицу сегодня? / What wear choose for outdoor?
+# Что надеть на улицу сегодня?/What wear choose for outdoor?
 
-#### язык: рус. и англ. / language: ru and en
+#### Небольшое руби приложение, которое дает совет о том, что одеть сегодня в соответствии с Ваше температурой (определяется автоматически)/Small ruby app for outdoor wear advising according to your temperature (automatically evaluated) 
+#### Язык: рус. и англ./Language: ru and en
 
-## Особенности
-+ 
+## Конфигурация/Configuration
++ `httparty` gem
++ `geocoder` gem
++ `dotenv-rails` gem
++ RSpec tests for key classes
 
-
-## Особенности
-1. Запустите в консоли исполнительный файл `main.rb` 
-2. Программа запросит текущее значение температуры, введите его
-3. В ответ приложение даст рекоммендации по тому, что можно одеть при заданной температуре.
+## Использование/Using
+1. Clone this repo
+2. exec `bundle`
+3. exec `ruby main.rb` 
+3. See the app result
