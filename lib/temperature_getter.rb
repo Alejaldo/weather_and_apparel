@@ -20,10 +20,10 @@ class TemperatureGetter
 
   private
 
-  attr_reader :api_key
-
   OPENWEATHERMAP_API_URL = 'https://api.openweathermap.org/data/2.5/weather'.freeze
   MY_IP_API_URL = 'https://api.my-ip.io/ip.json'.freeze
+
+  attr_reader :api_key
 
   def ip_address
     @ip_address ||= HTTParty.get(MY_IP_API_URL).parsed_response['ip']
